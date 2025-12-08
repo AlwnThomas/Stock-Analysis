@@ -35,3 +35,15 @@ ON s.stock_id = sp.stock_id
 GROUP BY s.ticker
 ORDER BY highest_close DESC
 LIMIT 3;
+
+-- 6️⃣️ Which stocks has the average close price higher than the overall average close price?
+SELECT s.ticker, AVG(sp.close_price) as avg_close_price
+FROM stocks s
+JOIN stock_prices sp 
+	on s.stock_id = sp.stock_id
+group by  s.ticker
+having AVG(close_price) >
+(
+	select AVG(close_price)
+	from stock_prices
+);
