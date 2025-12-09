@@ -41,9 +41,22 @@ SELECT s.ticker, AVG(sp.close_price) as avg_close_price
 FROM stocks s
 JOIN stock_prices sp 
 	on s.stock_id = sp.stock_id
-group by  s.ticker
-having AVG(close_price) >
+GROUP BY  s.ticker
+HAVING AVG(close_price) >
 (
-	select AVG(close_price)
-	from stock_prices
+	SELECT AVG(close_price)
+	FROM stock_prices
 );
+
+-- 7️⃣ Which stocks have an average daily volatility higher than the overall average daily volatility?
+ SELECT s.ticker, AVG(sp.high_price - sp.low_price) AS avg_daily_volatility
+ FROM stocks s
+ JOIN stock_prices sp
+  ON s.stock_id = sp.stock_id
+ GROUP BY s.ticker
+ HAVING AVG(sp.high_price - sp.low_price) >
+ (
+ SELECT AVG(high_price - low_price)
+ FROM stock_prices
+ )
+ ORDER BY avg_daily_volatility DESC;
