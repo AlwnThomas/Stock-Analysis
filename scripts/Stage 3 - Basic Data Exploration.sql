@@ -60,3 +60,20 @@ HAVING AVG(close_price) >
  FROM stock_prices
  )
  ORDER BY avg_daily_volatility DESC;
+ 
+-- 8️⃣ Which stocks have a higher-than-average maximum daily trading volume?
+SELECT s.ticker, MAX(sp.volume) AS max_volume
+FROM stocks s
+JOIN stock_prices sp
+  ON s.stock_id = sp.stock_id
+GROUP BY s.ticker
+HAVING MAX(sp.volume) >
+(
+    SELECT AVG(max_vol)
+    FROM (
+        SELECT stock_id, MAX(volume) AS max_vol
+        FROM stock_prices
+        GROUP BY stock_id
+    ) sub
+)
+ORDER BY max_volume DESC;
