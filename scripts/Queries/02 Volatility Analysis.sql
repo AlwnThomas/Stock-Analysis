@@ -64,3 +64,19 @@ FROM stocks s
 JOIN stock_prices sp ON s.stock_id = sp.stock_id
 GROUP BY s.ticker
 ORDER BY max_volatility DESC;
+
+-- 8. 7-Day Rolling Volatility of each stock
+SELECT 
+    s.ticker,
+    sp.price_date,
+    (sp.high_price - sp.low_price) AS daily_volatility,
+    AVG(sp.high_price - sp.low_price) OVER (
+        PARTITION BY s.stock_id
+        ORDER BY sp.price_date
+        ROWS BETWEEN 6 PRECEDING AND CURRENT ROW
+    ) AS rolling_7d_volatility
+FROM stocks s
+JOIN stock_prices sp
+    ON s.stock_id = sp.stock_id
+ORDER BY s.ticker, sp.price_date;
+
