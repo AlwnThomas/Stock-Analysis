@@ -1,35 +1,24 @@
-📈 Stock Market Analysis (SQL Project)
+<h2 align="center">📈 Stock Market Analysis (SQL Project)</h2>
 
-This project is a complete end-to-end SQL data analysis of real stock market data.
-It demonstrates database design, data ingestion, cleaning, transformation, and analytical SQL queries using PostgreSQL (via DBeaver).
+A structured SQL project analysing historical stock price data to extract insights on performance, volatility, trading volume, and comparative metrics across multiple companies.
+Built to demonstrate strong proficiency in SQL fundamentals, analytical queries, subqueries, window functions, and data modelling.
 
 The goal of this project is to replicate a real-world data analyst workflow using structured financial data.
 
-🔹 Project Overview
+<h3>🔍 Project Overview</h3>
 
-This project analyses historical stock prices from the S&P 100 across multiple companies.
-It includes:
+This project uses real historical stock price data, stored in a relational schema, and performs end-to-end analytical querying, including:
 
-Designing a relational database (companies, stocks, stock_prices).
+○ Daily performance metrics
 
-Importing real historical price data from Google Finance CSVs.
+○ Volatility analysis
 
-Writing SQL queries to answer analytical questions.
+○ Subquery-based insights
 
-Practising joins, aggregations, subqueries, and window functions.
+○ Top movers and ranking logic
 
-Preparing the project for GitHub with documentation and SQL scripts.
+○ Trading volume analysis
 
-🔹 Tools & Technologies
+○ Advanced aggregations and window functions
 
-DBeaver (database management)
-
-PostgreSQL (or MySQL)
-
-Google Sheets (data cleaning & reorganising)
-
-Google Finance (real stock data)
-
-CSV import workflows
-
-Git / GitHub (version control & documentation)
+<b>The goal is to simulate real analyst workflows and demonstrate SQL competency.</b>
