@@ -56,3 +56,11 @@ JOIN stock_prices sp ON s.stock_id = sp.stock_id
 WHERE s.ticker = 'AAPL'
   AND ((sp.high_price - sp.low_price) / sp.close_price * 100) > 5
 ORDER BY sp.price_date ASC;
+
+-- 7. Maximum daily volatility per stock
+SELECT s.ticker,
+       MAX(sp.high_price - sp.low_price) AS max_volatility
+FROM stocks s
+JOIN stock_prices sp ON s.stock_id = sp.stock_id
+GROUP BY s.ticker
+ORDER BY max_volatility DESC;
