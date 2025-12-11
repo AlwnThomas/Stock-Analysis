@@ -1,4 +1,4 @@
-<centre><h2>📈 Stock Market Analysis (SQL Project)</h2></centre>
+<h2 align="center">📈 Stock Market Analysis (SQL Project)</h2>
 
 A structured SQL project analysing historical stock price data to extract insights on performance, volatility, trading volume, and comparative metrics across multiple companies.
 Built to demonstrate strong proficiency in SQL fundamentals, analytical queries, subqueries, window functions, and data modelling.
