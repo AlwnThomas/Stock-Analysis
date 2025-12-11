@@ -1,27 +1,27 @@
-📈 Stock Market Analysis (SQL Project)
+<h2>📈 Stock Market Analysis (SQL Project)</h2>
 
 A structured SQL project analysing historical stock price data to extract insights on performance, volatility, trading volume, and comparative metrics across multiple companies.
 Built to demonstrate strong proficiency in SQL fundamentals, analytical queries, subqueries, window functions, and data modelling.
 
 The goal of this project is to replicate a real-world data analyst workflow using structured financial data.
 
-🔍 Project Overview
+<h3>🔍 Project Overview</h3>
 
 This project uses real historical stock price data, stored in a relational schema, and performs end-to-end analytical querying, including:
 
-Daily performance metrics
+🔹 Daily performance metrics
 
-Volatility analysis
+🔹 Volatility analysis
 
-Subquery-based insights
+🔹 Subquery-based insights
 
-Top movers and ranking logic
+🔹 Top movers and ranking logic
 
-Trading volume analysis
+🔹 Trading volume analysis
 
-Advanced aggregations and window functions
+🔹 Advanced aggregations and window functions
 
-The goal is to simulate real analyst workflows and demonstrate professional SQL competency.
+<b>The goal is to simulate real analyst workflows and demonstrate professional SQL competency.</b>
 
 🔹 Tools & Technologies
 
