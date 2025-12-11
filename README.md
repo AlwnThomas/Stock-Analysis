@@ -5,20 +5,23 @@ Built to demonstrate strong proficiency in SQL fundamentals, analytical queries,
 
 The goal of this project is to replicate a real-world data analyst workflow using structured financial data.
 
-🔹 Project Overview
+🔍 Project Overview
 
-This project analyses historical stock prices from the S&P 100 across multiple companies.
-It includes:
+This project uses real historical stock price data, stored in a relational schema, and performs end-to-end analytical querying, including:
 
-Designing a relational database (companies, stocks, stock_prices).
+Daily performance metrics
 
-Importing real historical price data from Google Finance CSVs.
+Volatility analysis
 
-Writing SQL queries to answer analytical questions.
+Subquery-based insights
 
-Practising joins, aggregations, subqueries, and window functions.
+Top movers and ranking logic
 
-Preparing the project for GitHub with documentation and SQL scripts.
+Trading volume analysis
+
+Advanced aggregations and window functions
+
+The goal is to simulate real analyst workflows and demonstrate professional SQL competency.
 
 🔹 Tools & Technologies
 
