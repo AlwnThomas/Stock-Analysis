@@ -1,6 +1,12 @@
-<h2 align="center">📈 Stock Market Analysis (SQL Project)</h2>
+<p align="center">
+  <img src="https://svg-banners.vercel.app/api?type=origin&text1=Stock%20Analysis%20Project&width=900&height=100" />
+</p>
 
-A structured SQL project analysing historical stock price data to extract insights on performance, volatility, trading volume, and comparative metrics across multiple companies.
+<div align="center">
+SQL • Data Analysis • Market Insights
+</div>
+
+A structured SQL project analysing historical stock price data of S&P 100 to extract insights on performance, volatility, trading volume, and comparative metrics across multiple companies.
 Built to demonstrate strong proficiency in SQL fundamentals, analytical queries, subqueries, window functions, and data modelling.
 
 The goal of this project is to replicate a real-world data analyst workflow using structured financial data.
@@ -9,16 +15,16 @@ The goal of this project is to replicate a real-world data analyst workflow usin
 
 This project uses real historical stock price data, stored in a relational schema, and performs end-to-end analytical querying, including:
 
-○ Daily performance metrics
+• Daily performance metrics
 
-○ Volatility analysis
+• Volatility analysis
 
-○ Subquery-based insights
+• Subquery-based insights
 
-○ Top movers and ranking logic
+• Top movers and ranking logic
 
-○ Trading volume analysis
+• Trading volume analysis
 
-○ Advanced aggregations and window functions
+• Advanced aggregations and window functions
 
 <b>The goal is to simulate real analyst workflows and demonstrate SQL competency.</b>
