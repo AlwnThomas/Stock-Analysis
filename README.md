@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=transparent&text=Stock%20Analysis%20Project&fontSize=38&fontColor=000000" />
+  <img src="https://readme-typing-svg.demolab.com?font=Inter&size=38&duration=1&pause=999999&color=000000&center=true&vCenter=true&width=1000&height=80&lines=Stock+Analysis+Project" />
 </p>
 
 <div align="center">
