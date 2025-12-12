@@ -9,9 +9,13 @@ The goal of this project is to replicate a real-world data analyst workflow usin
 This project uses real historical stock price data, stored in a relational schema, and performs end-to-end analytical querying, including:
 
 • Daily performance metrics
+
 • Volatility analysis
+
 • Top movers and ranking logic
+
 • Trading volume analysis
+
 • Advanced aggregations and window functions
 
 <b>The goal is to simulate real analyst workflows and demonstrate SQL competency.</b>
