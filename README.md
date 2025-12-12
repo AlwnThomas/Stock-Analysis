@@ -1,4 +1,7 @@
-<h2 align="center">📈 Stock Market Analysis (SQL Project)</h2>
+<img src="https://raw.githubusercontent.com/alwinthomas/assets/main/banners/stock-analysis-banner.png" width="100%" />
+<div align="center">
+SQL • Data Analysis • Market Insights
+</div>
 
 A structured SQL project analysing historical stock price data to extract insights on performance, volatility, trading volume, and comparative metrics across multiple companies.
 Built to demonstrate strong proficiency in SQL fundamentals, analytical queries, subqueries, window functions, and data modelling.
