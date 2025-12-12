@@ -1,7 +1,4 @@
-<p align="center">
-  <img src="https://svg-banners.vercel.app/api?type=origin&text1=Stock%20Analysis%20Project&width=900&height=100" />
-</p>
-
+![Banner](assets/S&P.png)
 <div align="center">
 SQL • Data Analysis • Market Insights
 </div>
