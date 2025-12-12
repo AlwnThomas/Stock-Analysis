@@ -1,11 +1,6 @@
 ![Banner](assets/S&P.png)
 
-<div align="center">
-SQL • Data Analysis • Market Insights
-</div>
-
-A structured SQL project analysing historical stock price data of S&P 100 to extract insights on performance, volatility, trading volume, and comparative metrics across multiple companies.
-Built to demonstrate strong proficiency in SQL fundamentals, analytical queries, subqueries, window functions, and data modelling.
+A structured SQL project analysing historical stock price data of S&P 100 to extract insights on performance, volatility, trading volume, and comparative metrics across multiple companies. Built to demonstrate strong proficiency in SQL fundamentals, analytical queries, subqueries, window functions, and data modelling.
 
 The goal of this project is to replicate a real-world data analyst workflow using structured financial data.
 
@@ -14,15 +9,9 @@ The goal of this project is to replicate a real-world data analyst workflow usin
 This project uses real historical stock price data, stored in a relational schema, and performs end-to-end analytical querying, including:
 
 • Daily performance metrics
-
 • Volatility analysis
-
-• Subquery-based insights
-
 • Top movers and ranking logic
-
 • Trading volume analysis
-
 • Advanced aggregations and window functions
 
 <b>The goal is to simulate real analyst workflows and demonstrate SQL competency.</b>
