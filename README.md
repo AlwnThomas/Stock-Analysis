@@ -1,4 +1,7 @@
-<img width="100%" src="https://svg-banners.vercel.app/api?type=origin&text=Stock%20Analysis%20Project&width=1600&height=300" />
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=wave&color=ffffff&height=80&section=header&text=Stock%20Analysis&fontColor=000000&fontSize=30" />
+</p>
+
 <div align="center">
 SQL • Data Analysis • Market Insights
 </div>
