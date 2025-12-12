@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Inter&size=38&duration=1&pause=999999&color=000000&center=true&vCenter=true&width=1000&height=80&lines=Stock+Analysis+Project" />
+  <img src="https://svg-banners.vercel.app/api?type=origin&text1=Stock%20Analysis%20Project&width=900&height=100" />
 </p>
 
 <div align="center">
