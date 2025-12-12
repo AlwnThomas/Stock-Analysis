@@ -1,7 +1,8 @@
 ![Banner](assets/S&P.png)
-<div align="center">
+
+<h2 align="center">
 SQL • Data Analysis • Market Insights
-</div>
+</h2>
 
 A structured SQL project analysing historical stock price data of S&P 100 to extract insights on performance, volatility, trading volume, and comparative metrics across multiple companies.
 Built to demonstrate strong proficiency in SQL fundamentals, analytical queries, subqueries, window functions, and data modelling.
