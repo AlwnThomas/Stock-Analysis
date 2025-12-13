@@ -79,4 +79,22 @@ HAVING AVG(sp.high_price - sp.low_price) > (
     FROM stock_prices
 );
 
+-- 7. Stocks with total volume above market average
+SELECT 
+    s.ticker,
+    SUM(sp.volume) AS total_volume
+FROM stocks s
+JOIN stock_prices sp
+    ON s.stock_id = sp.stock_id
+GROUP BY s.ticker
+HAVING SUM(sp.volume) >
+(
+    SELECT AVG(total_volume)
+    FROM (
+        SELECT SUM(volume) AS total_volume
+        FROM stock_prices
+        GROUP BY stock_id
+    ) sub
+);
+
 
