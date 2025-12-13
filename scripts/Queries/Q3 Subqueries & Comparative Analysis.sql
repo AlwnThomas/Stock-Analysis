@@ -68,3 +68,15 @@ HAVING COUNT(*) >
     ) sub
 );
 
+-- 6. Stocks having avg daily volatility higher than overall avg volatility
+SELECT s.ticker, AVG(sp.high_price - sp.low_price) AS avg_daily_volatility
+FROM stocks s
+JOIN stock_prices sp
+ON s.stock_id = sp.stock_id
+GROUP BY s.ticker
+HAVING AVG(sp.high_price - sp.low_price) > (
+    SELECT AVG(high_price - low_price)
+    FROM stock_prices
+);
+
+
