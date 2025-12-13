@@ -18,4 +18,4 @@ This project uses real historical stock price data, stored in a relational schem
 
 • Advanced aggregations and window functions
 
-<b>The goal is to simulate real analyst workflows and demonstrate SQL competency</b>
+<b>The goal is to simulate real analyst workflows and demonstrate SQL competency.</b>
