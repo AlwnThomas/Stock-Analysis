@@ -47,3 +47,24 @@ WHERE (
       AND sp2.volume > sp.volume
 ) < 3
 ORDER BY s.ticker, sp.volume DESC;
+
+-- 5. Stocks with more positive days than market average
+SELECT 
+    s.ticker,
+    COUNT(*) AS positive_days
+FROM stocks s
+JOIN stock_prices sp
+    ON s.stock_id = sp.stock_id
+WHERE sp.close_price > sp.open_price
+GROUP BY s.ticker
+HAVING COUNT(*) >
+(
+    SELECT AVG(positive_days)
+    FROM (
+        SELECT COUNT(*) AS positive_days
+        FROM stock_prices
+        WHERE close_price > open_price
+        GROUP BY stock_id
+    ) sub
+);
+
