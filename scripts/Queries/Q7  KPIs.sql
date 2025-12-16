@@ -91,13 +91,9 @@ GROUP BY s.ticker
 ORDER BY total_volume DESC
 LIMIT 1;
 
--- 5. Summary
+-- Q8.5 Market-wide summary KPIs
 SELECT
-	s.ticker,
-	AVG(sp.close_price - sp.open_price) AS avg_daily_return,
-	AVG(sp.high_price - sp.low_price) AS avg_daily_volatility,
-	SUM(sp.volume) AS total_market_volume
-FROM stocks s
-JOIN stock_prices sp
- ON s.stock_id = sp.stock_id
-GROUP BY s.ticker;
+    AVG((close_price - open_price) / open_price * 100) AS market_avg_daily_return,
+    AVG(high_price - low_price) AS market_avg_daily_volatility,
+    SUM(volume) AS total_market_volume
+FROM stock_prices;
