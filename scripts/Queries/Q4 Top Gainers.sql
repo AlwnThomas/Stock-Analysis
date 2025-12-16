@@ -48,4 +48,35 @@ JOIN stock_prices sp
 GROUP BY s.ticker
 ORDER BY avg_daily_percent_return DESC;
 
-
+-- 5. Cumulative percentage return per stock
+SELECT DISTINCT
+    s.ticker,
+    FIRST_VALUE(sp.close_price) OVER (
+        PARTITION BY s.stock_id
+        ORDER BY sp.price_date
+    ) AS first_close_price,
+    LAST_VALUE(sp.close_price) OVER (
+        PARTITION BY s.stock_id
+        ORDER BY sp.price_date
+        ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+    ) AS last_close_price,
+    (
+        LAST_VALUE(sp.close_price) OVER (
+            PARTITION BY s.stock_id
+            ORDER BY sp.price_date
+            ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+        )
+        -
+        FIRST_VALUE(sp.close_price) OVER (
+            PARTITION BY s.stock_id
+            ORDER BY sp.price_date
+        )
+    )
+    /
+    FIRST_VALUE(sp.close_price) OVER (
+        PARTITION BY s.stock_id
+        ORDER BY sp.price_date
+    ) * 100 AS cumulative_percent_return
+FROM stocks s
+JOIN stock_prices sp
+    ON s.stock_id = sp.stock_id;
