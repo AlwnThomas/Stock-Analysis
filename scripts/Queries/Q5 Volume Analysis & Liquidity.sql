@@ -92,4 +92,4 @@ CROSS JOIN (
         SUM(volume) AS market_volume
     FROM stock_prices
 ) mv
-ORDER BY volume_percentage DESC;
+ORDER BY stock_volume DESC;
