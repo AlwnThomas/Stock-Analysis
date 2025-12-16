@@ -80,3 +80,61 @@ SELECT DISTINCT
 FROM stocks s
 JOIN stock_prices sp
     ON s.stock_id = sp.stock_id;
+
+-- 6. Longest positive streak per stock
+WITH labelled_days AS (
+    SELECT
+        s.stock_id,
+        s.ticker,
+        sp.price_date,
+        CASE 
+            WHEN sp.close_price > sp.open_price THEN 1 
+            ELSE 0 
+        END AS is_positive
+    FROM stocks s
+    JOIN stock_prices sp
+        ON s.stock_id = sp.stock_id
+),
+
+streak_starts AS (
+    SELECT
+        stock_id,
+        ticker,
+        price_date,
+        is_positive,
+        CASE
+            WHEN is_positive = 1
+             AND LAG(is_positive, 1, 0) 
+                 OVER (PARTITION BY stock_id ORDER BY price_date) = 0
+            THEN 1
+            ELSE 0
+        END AS streak_start
+    FROM labelled_days
+),
+
+streak_groups AS (
+    SELECT
+        stock_id,
+        ticker,
+        price_date,
+        SUM(streak_start) OVER (
+            PARTITION BY stock_id
+            ORDER BY price_date
+        ) AS streak_id
+    FROM streak_starts
+    WHERE is_positive = 1
+)
+
+SELECT
+    ticker,
+    MAX(streak_length) AS longest_positive_streak
+FROM (
+    SELECT
+        ticker,
+        streak_id,
+        COUNT(*) AS streak_length
+    FROM streak_groups
+    GROUP BY ticker, streak_id
+) sub
+GROUP BY ticker
+ORDER BY longest_positive_streak DESC;
