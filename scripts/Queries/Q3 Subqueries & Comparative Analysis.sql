@@ -97,4 +97,20 @@ HAVING SUM(sp.volume) >
     ) sub
 );
 
+-- 8. Days where close price is above stock's monthly average
+SELECT 
+    s.ticker,
+    sp.price_date,
+    sp.close_price,
+    AVG(sp.close_price) OVER (
+        PARTITION BY s.stock_id, DATE_FORMAT(sp.price_date, '%Y-%m')
+    ) AS monthly_avg_close_price
+FROM stocks s
+JOIN stock_prices sp
+    ON s.stock_id = sp.stock_id
+WHERE sp.close_price >
+      AVG(sp.close_price) OVER (
+          PARTITION BY s.stock_id, DATE_FORMAT(sp.price_date, '%Y-%m')
+      )
+ORDER BY s.ticker, sp.price_date;
 
