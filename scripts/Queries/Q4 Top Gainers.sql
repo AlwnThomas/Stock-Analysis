@@ -82,7 +82,6 @@ JOIN stock_prices sp
     ON s.stock_id = sp.stock_id;
 
 -- 6. Longest positive streak per stock
--- Q4.6 Longest positive streak per stock (more compatible)
 WITH labelled_days AS (
     SELECT
         s.stock_id,
