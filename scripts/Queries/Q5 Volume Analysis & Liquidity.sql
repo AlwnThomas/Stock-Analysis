@@ -38,7 +38,71 @@ JOIN (
 WHERE sp.volume > 2 * avg_vol.avg_volume
 ORDER BY s.ticker, sp.volume DESC;
 
+-- 4. Days where volume was above stock average, was stock more likely to close higher?
+SELECT
+	s.ticker,
+	sp.price_date,
+	sp.volume,
+	sp.open_price,
+	sp.close_price
+FROM stocks s
+JOIN stock_prices sp
+ ON s.stock_id = sp.stock_id
+JOIN (
+	SELECT
+		stock_id,
+		AVG(volume) AS avg_volume
+	FROM stock_prices
+	GROUP BY stock_id
+) avg_vol
+	ON sp.stock_id = avg_vol.stock_id
+WHERE sp.volume > avg_vol.avg_volume 
+ORDER BY s.ticker, sp.price_date;
 
-		
-	
+-- 5. Highest total trading stocks
+SELECT
+	s.ticker,
+	total_volume
+FROM stocks s
+JOIN stock_prices sp
+ ON s.stock_id = sp.stock_id 
+JOIN (
+	SELECT
+		stock_id,
+		SUM(volume) AS total_volume
+	FROM stock_prices
+	GROUP BY stock_id
+	) total_volume
+	 ON sp.stock_id = total_volume.stock_id 
+GROUP BY s.ticker, total_volume
+ORDER BY total_volume DESC;
+
+-- 6. % of total market volume for each stock
+SELECT
+	s.ticker,
+	stock_volume,
+	SUM(sp.volume) AS market_volume,
+	volume_percentage
+FROM stocks s
+JOIN stock_prices sp
+ ON s.stock_id = sp.stock_id 
+JOIN (
+	SELECT
+		stock_id,
+		SUM(volume) AS stock_volume
+	FROM stock_prices
+	GROUP BY stock_id
+	) stock_volume
+		ON s.stock_id = stock_volume.stock_id 
+JOIN (
+	SELECT
+		s.stock_id,
+		((sp.volume / SUM(sp.volume)) * 100) AS volume_percentage
+	FROM stocks s
+	JOIN stock_prices sp
+		ON s.stock_id = sp.stock_id
+	GROUP BY s.stock_id
+	) volume_percentage
+		ON s.stock_id = volume_percentage.stock_id
+GROUP BY s.ticker;
 	 
